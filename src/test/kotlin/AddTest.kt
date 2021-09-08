@@ -29,10 +29,12 @@ class AddTest {
     @Test
     fun assert_with_delimiter() {
         assertEquals(8, add("//;\n1;3;4"))
-        assertEquals(8, add("//,\n1,3,4"))
         assertEquals(6, add("//$\n1$2$3"))
         assertEquals(13, add("//@\n2@3@8@0"))
         assertEquals(13, add("//@!\n2@!3@!8"))
+        assertEquals(13, add("//@,!\n2@3!8"))
+        assertEquals(14, add("//**,*,***\n2*3***8**1"))
+        assertEquals(14, add("//**,$$$,^\n2^3$$$8**1"))
     }
 
     @Test

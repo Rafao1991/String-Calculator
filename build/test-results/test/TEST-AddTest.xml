@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="AddTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2021-09-08T18:03:33" hostname="fedora" time="0.373">
+<testsuite name="AddTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2021-09-08T21:06:59" hostname="fedora" time="0.411">
   <properties/>
-  <testcase name="assert_with_new_lines" classname="AddTest" time="0.13"/>
-  <testcase name="assert_with_delimiter" classname="AddTest" time="0.001"/>
+  <testcase name="assert_with_new_lines" classname="AddTest" time="0.156"/>
+  <testcase name="assert_with_delimiter" classname="AddTest" time="0.008"/>
   <testcase name="assert_empty" classname="AddTest" time="0.0"/>
-  <testcase name="assert_with_negative_numbers" classname="AddTest" time="0.241"/>
-  <testcase name="assert_simple_cases" classname="AddTest" time="0.001"/>
-  <testcase name="assert_ignore_greater_than_1000" classname="AddTest" time="0.0"/>
+  <testcase name="assert_with_negative_numbers" classname="AddTest" time="0.243"/>
+  <testcase name="assert_simple_cases" classname="AddTest" time="0.0"/>
+  <testcase name="assert_ignore_greater_than_1000" classname="AddTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
