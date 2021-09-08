@@ -44,19 +44,32 @@ fun add(numbers: String) : Int {
     return if (numbers.startsWith(DELIMITER_PREFIX)) {
         delimiterAdd(numbers)
     } else {
-        simpleAdd(numbers, DEFAULT_DELIMITER)
+        simpleAdd(numbers, arrayListOf(DEFAULT_DELIMITER))
     }
 }
 
 private fun delimiterAdd(numbers: String): Int {
     val array = numbers.split("\n")
-    val delimiter = array[0].substring(2)
+    val delimiters = getDelimiters(array[0].substring(2))
 
-    return simpleAdd(array[1], delimiter)
+    return simpleAdd(array[1], delimiters)
 }
 
-private fun simpleAdd(numbers: String, delimiter: String): Int {
-    val array = numbers.split(delimiter)
+fun getDelimiters(delimiters: String): ArrayList<String> {
+    val array = arrayListOf<String>()
+    delimiters.split(",").forEach {
+        array.add(it)
+    }
+    return array
+}
+
+private fun simpleAdd(numbers: String, delimiters: ArrayList<String>): Int {
+    val array = arrayListOf<String>()
+    if (delimiters.size > 1) {
+        array.addAll(numbers.split(delimiters.joinToString(separator = "|") { Regex.escape(it) }.toRegex()))
+    } else {
+        array.addAll(numbers.split(delimiters[0]))
+    }
     var sum = 0
 
     array.forEach {
